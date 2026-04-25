@@ -1459,6 +1459,238 @@ body.modal-open {
 }
 
 /* ============================================
+   ACHIEVERS SECTION (Meet Our Stars)
+   ============================================ */
+.achievers-section {
+    background: #ffffff;
+    padding: 4rem 0;
+    overflow: hidden;
+}
+
+.stars-header {
+    margin-bottom: 2rem;
+}
+
+.stars-title-wrap h2 {
+    font-family: var(--font-head);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.sparkle-wrap {
+    color: #f39c12;
+    font-size: 1.4rem;
+}
+
+.star-filters {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+}
+
+.star-filters::-webkit-scrollbar {
+    display: none;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #d1d5db;
+    background: #fff;
+    color: #4b5563;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.filter-btn.active {
+    background: #eff6ff;
+    color: #2563eb;
+    border-color: #2563eb;
+}
+
+.stars-carousel-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #475569;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s ease;
+}
+
+.scroll-btn:hover {
+    background: #f8fafc;
+    color: #2563eb;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.scroll-btn.left {
+    left: -24px;
+}
+
+.scroll-btn.right {
+    right: -24px;
+}
+
+.stars-container {
+    padding: 1rem 0 2rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    cursor: grab;
+    flex: 1;
+}
+
+.stars-container::-webkit-scrollbar {
+    display: none;
+}
+
+.stars-wrapper {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+}
+
+.star-card {
+    width: 250px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.star-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.star-img-box {
+    height: 220px;
+    background: linear-gradient(to bottom, #eff6ff, #dbeafe);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.star-img {
+    width: 90%;
+    height: 95%;
+    object-fit: cover;
+    object-position: bottom center;
+}
+
+.star-img-placeholder {
+    font-size: 5rem;
+    color: #94a3b8;
+    margin-bottom: 3rem;
+}
+
+.star-banner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #262626;
+    color: #fff;
+    text-align: center;
+    padding: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.star-info {
+    padding: 1rem 1.2rem;
+}
+
+.star-name {
+    font-family: var(--font-head);
+    font-size: 1.15rem;
+    color: #1a1a1a;
+    margin-bottom: 0.2rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.star-course, .star-exam {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-bottom: 0.1rem;
+}
+
+.star-exam {
+    margin-bottom: 1rem;
+}
+
+.star-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.star-score {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #2563eb;
+    letter-spacing: -0.5px;
+}
+
+.star-arrow {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #2563eb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2563eb;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.star-arrow:hover {
+    background: #2563eb;
+    color: #fff;
+}
+
+.star-card.hidden {
+    display: none;
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 @media (max-width: 1024px) {

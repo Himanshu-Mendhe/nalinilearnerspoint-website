@@ -311,4 +311,44 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --- Achiever Star Filters ---
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const starCards = document.querySelectorAll('.star-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active button
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-filter');
+
+            starCards.forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
+
+    // --- Achiever Carousel Scrolling ---
+    const starsContainer = document.getElementById('starsContainer');
+    const scrollLeftBtn = document.getElementById('scrollLeft');
+    const scrollRightBtn = document.getElementById('scrollRight');
+
+    if (starsContainer && scrollLeftBtn && scrollRightBtn) {
+        // Scroll amount equals one card width + gap (~280px)
+        const scrollAmount = 280;
+
+        scrollLeftBtn.addEventListener('click', () => {
+            starsContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        scrollRightBtn.addEventListener('click', () => {
+            starsContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+    }
+
 });

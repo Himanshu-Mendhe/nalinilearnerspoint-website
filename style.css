@@ -1595,19 +1595,19 @@ body.modal-open {
 
 .star-img-box {
     height: 220px;
-    background: linear-gradient(to bottom, #eff6ff, #dbeafe);
+    background: #fff;
     position: relative;
     overflow: hidden;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
 }
 
 .star-img {
-    width: 90%;
-    height: 95%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    object-position: bottom center;
+    object-position: top center;
 }
 
 .star-img-placeholder {
@@ -1873,7 +1873,7 @@ body.modal-open {
     }
 
     .nav-links.open .dropdown-menu {
-        display: block;
+        display: none;
         position: static;
         box-shadow: none;
         border: none;
@@ -1881,13 +1881,13 @@ body.modal-open {
         min-width: auto;
     }
 
+    .nav-item-dropdown.active .dropdown-menu {
+        display: block;
+    }
+
     .nav-links.open .dropdown-menu li a {
         padding: 0.4rem 0;
         font-size: 0.85rem;
-    }
-
-    .nav-links.open+.nav-cta {
-        display: flex;
     }
 
     .section-header h2 {

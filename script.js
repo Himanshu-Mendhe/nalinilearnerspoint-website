@@ -22,7 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Close menu when clicking a link
         navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', (e) => {
+                // If this is a dropdown toggle on mobile, don't close the menu, just toggle it
+                if (window.innerWidth <= 768 && link.parentElement.classList.contains('nav-item-dropdown')) {
+                    e.preventDefault();
+                    link.parentElement.classList.toggle('active');
+                    return;
+                }
+                
                 navLinks.classList.remove('open');
                 mobileMenuBtn.querySelector('i').classList.replace('fa-xmark', 'fa-bars');
             });

@@ -329,14 +329,31 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('active');
 
             const filter = btn.getAttribute('data-filter');
+            let visibleCount = 0;
 
             starCards.forEach(card => {
                 if (filter === 'all' || card.getAttribute('data-category') === filter) {
                     card.classList.remove('hidden');
+                    visibleCount++;
                 } else {
                     card.classList.add('hidden');
                 }
             });
+
+            // Handle empty state
+            const emptyState = document.getElementById('starsEmptyState');
+            const starsWrapper = document.getElementById('starsWrapper');
+            const scrollBtns = document.querySelectorAll('.stars-carousel-wrap .scroll-btn');
+
+            if (visibleCount === 0) {
+                if (emptyState) emptyState.classList.remove('hidden');
+                if (starsWrapper) starsWrapper.classList.add('hidden');
+                scrollBtns.forEach(btn => btn.style.display = 'none');
+            } else {
+                if (emptyState) emptyState.classList.add('hidden');
+                if (starsWrapper) starsWrapper.classList.remove('hidden');
+                scrollBtns.forEach(btn => btn.style.display = 'flex');
+            }
         });
     });
 
